@@ -19,10 +19,7 @@ public class QuizTimer : MonoBehaviour
         currenttime -= Time.deltaTime;
         if (currenttime <= 0)
         {
-            Debug.Log("Time is Over");
             currenttime = 0;
         }
-        
-        Debug.Log($"{currenttime}");
     }
 }

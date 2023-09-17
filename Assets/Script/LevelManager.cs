@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     public QuizData[] _quizData = new QuizData[0];
     public int index;
 
-    public void nextLevel()
+    private void nextLevel()
     {
         index++;
         if (index >= _quizData.Length)
@@ -26,5 +26,21 @@ public class LevelManager : MonoBehaviour
             index = 0;
         }
         QuizData quizData = _quizData[index];
+    }
+
+    private void resetLevel()
+    {
+        index = 0;
+        QuizData quizData = _quizData[index];
+    }
+
+    public void CorrectAnswer(int index)
+    {
+        nextLevel();
+    }
+
+    public void WrongAnswer(int index)
+    {
+        resetLevel();
     }
 }
