@@ -536,7 +536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &135442215
 RectTransform:
   m_ObjectHideFlags: 0
@@ -699,7 +699,7 @@ MonoBehaviour:
   - {fileID: 1058409519}
   - {fileID: 66605775}
   - {fileID: 67817624}
-  uiPopUp: {fileID: 293563086}
+  uiPopUp: {fileID: 0}
   timeSlider: {fileID: 11410031}
   choiceButton:
   - {fileID: 1094688318}
@@ -938,7 +938,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 293563087}
-  - component: {fileID: 293563088}
   m_Layer: 5
   m_Name: Pop Up Message
   m_TagString: Untagged
@@ -969,24 +968,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &293563088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293563086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2957778cb98dd6443a2b4cb47da419e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  answerResult: {fileID: 1983591448}
-  buttonText: {fileID: 0}
-  buttonPopUp:
-  - {fileID: 135442216}
-  - {fileID: 1872761709}
-  levelManager: {fileID: 0}
 --- !u!1 &474066303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,19 +1178,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 634885793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 641009208}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: nextLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &634885793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,19 +1385,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 653008442}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 641009208}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: nextLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &653008442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1717,19 +1674,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1094688319}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 641009208}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: nextLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1094688319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1777,6 +1722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1142608436}
+  - component: {fileID: 1142608437}
   m_Layer: 5
   m_Name: Pop up UI
   m_TagString: Untagged
@@ -1806,6 +1752,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1142608437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142608435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2957778cb98dd6443a2b4cb47da419e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageConsoleObject: {fileID: 293563086}
+  answerResult: {fileID: 1983591448}
+  buttonPopUp:
+  - {fileID: 135442216}
+  - {fileID: 1872761709}
+  levelManager: {fileID: 641009208}
 --- !u!1 &1145610328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3128,19 +3092,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1842020197}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 641009208}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: nextLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1842020197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3197,7 +3149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1872761708
 RectTransform:
   m_ObjectHideFlags: 0
