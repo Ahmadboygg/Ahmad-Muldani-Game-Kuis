@@ -15,6 +15,7 @@ public class QuizTimer : MonoBehaviour
     {
         _uiPopUp = GetComponentInChildren<UIPopUp>();
         _uiPopUp.timePaused += TimePaused;
+        _uiPopUp.resetTime += ResetTime;
         currenttime = setTimer;
     }
 
