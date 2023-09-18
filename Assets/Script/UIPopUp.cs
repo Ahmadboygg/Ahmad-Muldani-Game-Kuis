@@ -30,6 +30,7 @@ public class UIPopUp : MonoBehaviour
             buttonPopUp[0].gameObject.SetActive(true);
             buttonPopUp[0].onClick.AddListener(()=>
             {
+                levelManager.nextLevel();
                 buttonPopUp[0].gameObject.SetActive(false);
                 messageConsoleObject.gameObject.SetActive(false);
                 resetTime.Invoke();
@@ -44,6 +45,7 @@ public class UIPopUp : MonoBehaviour
             buttonPopUp[1].gameObject.SetActive(true);
             buttonPopUp[1].onClick.AddListener(()=>
             {
+                levelManager.resetLevel();
                 buttonPopUp[1].gameObject.SetActive(false);
                 messageConsoleObject.gameObject.SetActive(false);
                 timePaused.Invoke(false);
