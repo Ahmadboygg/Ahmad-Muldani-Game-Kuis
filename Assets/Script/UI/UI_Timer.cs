@@ -7,6 +7,7 @@ public class UI_Timer : MonoBehaviour
 {
     [SerializeField] private Slider timeSlider;
     [SerializeField] private float quizTime;
+    [SerializeField] private GameObject gameOverUI;
     private float currentQuizTime;
     void Start()
     {
@@ -21,6 +22,7 @@ public class UI_Timer : MonoBehaviour
         
         if (currentQuizTime <= 0)
         {
+            gameOverUI.gameObject.SetActive(true);
             currentQuizTime = 0;
         }
     }
