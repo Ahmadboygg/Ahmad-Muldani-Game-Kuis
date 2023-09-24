@@ -23,13 +23,13 @@ public class UIGamePlay : MonoBehaviour
         uiPopUp = GetComponentInChildren<UIPopUp>();
         quizTimer = GetComponent<QuizTimer>();
         timeSlider.maxValue = quizTimer.setTimer;
-        SetCorrectAnswer(levelManager._quizData[levelManager.index].isCorrectAnswer);
     }
 
     private void Update()
     {
         SetUIData(levelManager._quizData[levelManager.index].question,levelManager._quizData[levelManager.index].answerChoice,
             levelManager._quizData[levelManager.index].questionImage);
+        SetCorrectAnswer(levelManager._quizData[levelManager.index].isCorrectAnswer);
         timeSlider.value = quizTimer.currenttime;
     }
 

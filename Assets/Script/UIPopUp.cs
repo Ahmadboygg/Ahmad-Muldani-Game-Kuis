@@ -12,11 +12,19 @@ public class UIPopUp : MonoBehaviour
     public Button[] buttonPopUp;
     public LevelManager levelManager;
     private int buttonIndex;
-    
+    public event Action<bool> timePaused;
+    public event Action resetTime;
+
+    private void Start()
+    {
+        timePaused.Invoke(false);
+    }
+
     public void ShowMessageConsole(bool isCorrect)
     {
         if (isCorrect)
         {
+            timePaused.Invoke(true);
             answerResult.text = "Jawabanmu Benar !";
             messageConsoleObject.gameObject.SetActive(true);
             buttonPopUp[0].gameObject.SetActive(true);
@@ -25,10 +33,13 @@ public class UIPopUp : MonoBehaviour
                 levelManager.nextLevel();
                 buttonPopUp[0].gameObject.SetActive(false);
                 messageConsoleObject.gameObject.SetActive(false);
+                resetTime.Invoke();
+                timePaused.Invoke(false);
             });            
         }
         else
         {
+            timePaused.Invoke(true);
             answerResult.text = "Jawabanmu Salah !";
             messageConsoleObject.gameObject.SetActive(true);
             buttonPopUp[1].gameObject.SetActive(true);
@@ -37,6 +48,7 @@ public class UIPopUp : MonoBehaviour
                 levelManager.resetLevel();
                 buttonPopUp[1].gameObject.SetActive(false);
                 messageConsoleObject.gameObject.SetActive(false);
+                timePaused.Invoke(false);
             });
         }
     }

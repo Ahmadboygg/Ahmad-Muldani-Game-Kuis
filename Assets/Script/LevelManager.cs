@@ -1,37 +1,45 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
-
 public class LevelManager : MonoBehaviour
 {
-    [System.Serializable]
-    public struct QuizData
-    {
-        public string question;
-        public Sprite questionImage;
 
-        public string[] answerChoice;
-        public bool[] isCorrectAnswer;
+    [SerializeField] private QuizLevelPack _quizLevelPack = null;
+    [SerializeField] private int quizIndex;
+    [SerializeField] private UI_Question _uiQuestion;
+    [SerializeField] private UI_AnswerChoice[] _uiAnswerChoice = new UI_AnswerChoice[0];
+    private int correctIndex;
+    public bool isCorrectAnswer;
+
+    private void Start()
+    {
+       NextQuestion();
     }
 
-    public QuizData[] _quizData = new QuizData[0];
-    public int index;
-    private int currentIndex;
-
-    public void nextLevel()
+    public void NextQuestion()
     {
-        index++;
-        if (index >= _quizData.Length)
+        quizIndex++;
+        if (quizIndex >= _quizLevelPack.muchLevel)
         {
-            index = 0;
+            quizIndex = 0;
         }
-        QuizData quizData = _quizData[index];
+
+        Quiz quizData = _quizLevelPack.GetQuizLevel(quizIndex);
+        _uiQuestion.SetQuestionUI(quizData.questionText, quizData.questionHintImage);
+        
+        for (int i = 0; i < _uiAnswerChoice.Length; i++)
+        {
+            UI_AnswerChoice answerChoice = _uiAnswerChoice[i];
+            Quiz.QuizData data = quizData.quizAnswerChoices[i];
+            answerChoice.SetAnswerChoicesUI(data.answerChoicesText, data.isCorrectAnswers);
+        }
     }
 
-    public void resetLevel()
+    public void CorrectAnswerCheck()
     {
-        index = 0;
-        QuizData quizData = _quizData[index];
+        
     }
 }
